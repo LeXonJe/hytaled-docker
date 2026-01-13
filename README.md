@@ -1,4 +1,4 @@
-# Hytale Server in a container
+# Hytale Server as a Container
 
 This repo provides a container build file that bundles the hytale-downloader binary from official hytale sources.
 
