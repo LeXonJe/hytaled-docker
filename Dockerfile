@@ -1,7 +1,7 @@
 FROM eclipse-temurin:25-alpine
-WORKDIR /app
+WORKDIR /hytale
 
-RUN apk add --no-cache curl unzip
+RUN apk add --no-cache curl unzip gcompat
 
 COPY entrypoint.sh .
 
@@ -9,4 +9,5 @@ RUN curl https://downloader.hytale.com/hytale-downloader.zip -o hytale-downloade
   unzip hytale-downloader.zip hytale-downloader-linux-amd64 && \
   rm hytale-downloader.zip
 
-CMD [ "bash", "entrypoint.sh" ]
+WORKDIR /data
+CMD [ "sh", "/hytale/entrypoint.sh" ]

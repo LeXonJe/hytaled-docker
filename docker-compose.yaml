@@ -1,0 +1,15 @@
+services:
+  hytale-server:
+    build: .
+    container_name: hytale-server
+    tty: true
+    stdin_open: true
+    ports:
+      - 5520:5520/udp
+    environment:
+      - JAVA_FLAGS=-Xms24G -Xmx24G
+    volumes:
+      - data:/data
+
+volumes:
+  data:
